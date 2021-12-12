@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import useSync from './useSync';
+import useOnDone from './useOnDone';
 import useAsync from './useAsync';
 
-export { useSync, useAsync };
+export { useOnDone, useAsync };

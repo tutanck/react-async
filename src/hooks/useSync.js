@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function useSync(refresh, deps = []) {
+export default function useOnDone(refresh, deps = []) {
   useEffect(() => {
     if (deps.includes('done')) {
       refresh();
