@@ -1,0 +1,30 @@
+{
+  "name": "react-sync-hooks",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tutanck",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutanck/react-sync-hooks"
+  },
+  "contributors": [
+    "tutanck <tutanck@gmail.com>"
+  ],
+  "keywords": [
+    "react",
+    "async",
+    "sync",
+    "hooks",
+    "refresh",
+    "promise",
+    "synchronization"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
