@@ -1,18 +1,23 @@
 {
-  "name": "react-sync-hooks",
+  "name": "@tutanck/react-async",
   "version": "0.0.1",
-  "description": "",
+  "description": "Dead simple react async hook for state synchronuzation",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint --ext .js,.jsx ./src",
     "lint:fix": "eslint --fix --ext .js,.jsx ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "tutanck",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tutanck/react-sync-hooks"
+    "url": "git+https://github.com/tutanck/react-async.git"
   },
+  "author": "tutanck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tutanck/react-async/issues"
+  },
+  "homepage": "https://github.com/tutanck/react-async#readme",
   "contributors": [
     "tutanck <tutanck@gmail.com>"
   ],
@@ -25,7 +30,6 @@
     "promise",
     "synchronization"
   ],
-  "license": "ISC",
   "dependencies": {
     "react": "^17.0.2"
   },
