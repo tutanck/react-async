@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import useOnDone from './hooks/useOnDone';
 import useAsync from './hooks/useAsync';
+import useOnDone from './hooks/useOnDone';
 
 export { useOnDone, useAsync };
