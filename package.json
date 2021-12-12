@@ -1,6 +1,6 @@
 {
   "name": "@tutanck/react-async",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dead simple react async hook for state synchronuzation",
   "main": "src/index.js",
   "scripts": {
