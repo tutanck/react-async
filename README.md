@@ -1,4 +1,4 @@
-# @tutanck/react-async: Dead simple react async hook 
+# Dead simple react async hook 
 
 *@tutanck/react-async* offers only 2 hooks :
 * **useAsync**: run an async function and allows to follow its execution status.
@@ -6,7 +6,7 @@
 * **useOnDone**: execute a callback whenever at least one of its dependencies is 'done'.
 
 ## Example
----
+
  ```JavaScript
 import { fetch, add, update, remove } from 'src/api/products';
 import { useAsync, useOnDone } from '@tutanck/react-async';
@@ -19,9 +19,12 @@ export default function App({ onError }) {
   const [updateProduct, updateStatus] = useAsync(update);
   const [removeProduct, removeStatus] = useAsync(remove);
 
-  useEffect(fetchProducts, []); // First fetch
+  useEffect(fetchProducts, []); // first fetch
 
-  // Will run 'fetchProducts' whenever addStatus, updateStatus or removeStatus is equal to 'done'.
+  // Will run 'fetchProducts' whenever 
+  // addStatus, updateStatus or removeStatus 
+  // is equal to 'done'.
+  
   useOnDone(fetchProducts, [addStatus, updateStatus, removeStatus]); // refresh on change
 
   return fetchStatus === 'loading' ? (
@@ -29,28 +32,25 @@ export default function App({ onError }) {
   ) : (
     <div>
         <Button 
-            disabled={addStatus === 'loading'} 
-            onClick={(id) => removeProduct(id)}
+          disabled={addStatus === 'loading'} 
+          onClick={() => addProduct()}
         >
-            Delete
+            Create
         </Button>
            
         <Button 
-        disabled={addStatus === 'loading'} 
-        onClick={(id) => updateProduct(id)}
+          disabled={addStatus === 'loading'} 
+          onClick={(id) => removeProduct(id)}
         >
-            Stock up
+            Delete
         </Button>
     </div>  
   );
 }
 ```
-[FULL WORKING EXAMPLE HERE](https://github.com/tutanck/Babazon)
-
-[WORKING EXAMPLE APP](https://babazon.netlify.app/)
+You can find the [full working example here.](https://github.com/tutanck/Babazon)
 
 ## API
----
 
 > ## useAsync
 ### **Syntax**
@@ -81,7 +81,7 @@ An array of 2 elements in this order:
 ### **Parameters**
 
 1. fn: Whatever function you want (async or not).
-2. deps: An array of 'status' dependencies
+2. deps: An array of *status* dependencies
 ### **Return value**
 
 No return value.
