@@ -24,8 +24,7 @@ export default function App({ onError }) {
   // Will run 'fetchProducts' whenever 
   // addStatus, updateStatus or removeStatus 
   // is equal to 'done'.
-  
-  useOnDone(fetchProducts, [addStatus, updateStatus, removeStatus]); // refresh on change
+  useOnDone(fetchProducts, [addStatus, updateStatus, removeStatus]);
 
   return fetchStatus === 'loading' ? (
     <LinearProgress />
@@ -39,7 +38,7 @@ export default function App({ onError }) {
         </Button>
            
         <Button 
-          disabled={addStatus === 'loading'} 
+          disabled={removeStatus === 'loading'} 
           onClick={(id) => removeProduct(id)}
         >
             Delete
@@ -48,7 +47,7 @@ export default function App({ onError }) {
   );
 }
 ```
-You can find the [full working example here.](https://github.com/tutanck/Babazon)
+You will find the [full working example here.](https://github.com/tutanck/Babazon)
 
 ## API
 
