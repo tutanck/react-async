@@ -1,7 +1,7 @@
 # Dead simple react async hook 
 
 *@tutanck/react-async* offers only 2 hooks :
-* **useAsync**: run an async function and allows to follow its execution status.
+* **useAsync**: run an async function and allows you to follow its execution status.
 
 * **useOnDone**: execute a callback whenever at least one of its dependencies is 'done'.
 
@@ -19,12 +19,14 @@ export default function App({ onError }) {
   const [updateProduct, updateStatus] = useAsync(update);
   const [removeProduct, removeStatus] = useAsync(remove);
 
-  useEffect(fetchProducts, []); // first fetch
+  const fetchAndSet = () => fetchProducts().then(setProducts).catch(onError);
+
+  useEffect(fetchAndSet, []); // first fetch
 
   // Will run 'fetchProducts' whenever 
   // addStatus, updateStatus or removeStatus 
   // is equal to 'done'.
-  useOnDone(fetchProducts, [addStatus, updateStatus, removeStatus]);
+  useOnDone(fetchAndSet, [addStatus, updateStatus, removeStatus]);
 
   return fetchStatus === 'loading' ? (
     <LinearProgress />
@@ -36,7 +38,7 @@ export default function App({ onError }) {
         >
             Create
         </Button>
-           
+
         <Button 
           disabled={removeStatus === 'loading'} 
           onClick={(id) => removeProduct(id)}
@@ -75,12 +77,12 @@ An array of 2 elements in this order:
 ### **Syntax**
 
 ```JavaScript
- useOnDone(fn, deps);
+ useOnDone(fn, statusDeps);
 ```
 ### **Parameters**
 
-1. fn: Whatever function you want (async or not).
-2. deps: An array of *status* dependencies
+1. fn: Whatever callback function you want (async or not).
+2. statusDeps: An array of *status* dependencies.
 ### **Return value**
 
 No return value.
