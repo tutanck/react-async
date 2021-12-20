@@ -1,6 +1,6 @@
 {
   "name": "@tutanck/react-async",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Dead simple react async hook for state synchronuzation",
   "main": "src/index.js",
   "scripts": {
@@ -30,9 +30,6 @@
     "promise",
     "synchronization"
   ],
-  "dependencies": {
-    "react": "^17.0.2"
-  },
   "devDependencies": {
     "@babel/core": "7.15.5",
     "@babel/eslint-parser": "7.15.4",
